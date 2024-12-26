@@ -1,0 +1,57 @@
+.about {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-property(row-gap, 64, 72, 144);
+  }
+  &__text {
+    @include onTablet {
+      display: flex;
+      column-gap: 24px;
+    }
+  }
+  &__digits {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      row-gap: 80px;
+    }
+    @include onDesktop {
+      row-gap: 0;
+      flex-direction: row;
+    }
+  }
+  &__row {
+    @include onTablet {
+      display: flex;
+      column-gap: 24px;
+    }
+    @include onDesktop {
+      flex: 0 0 50%;
+    }
+  }
+  &__digit {
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+
+    @include  onTablet {
+      flex: 0 0 50%;
+      margin-bottom: 0;
+    }
+  }
+  &__subtitle {
+    @extend %section-title;
+    font-size: 96px;
+  }
+  &__title {
+    flex: 0 0 50%;
+    margin-bottom: 32px;
+
+    @extend %section-title;
+    @include onTablet {
+      margin-bottom: 0px;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.products {
+  &__title {
+    margin-bottom: 24px;
+    @extend %section-title;
+  }
+  &__text {
+    @include adaptive-property(margin-bottom, 56, 80, 80);
+  }
+  &__text p:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &__cards {
+    display: grid;
+    @include adaptive-property(row-gap, 56, 80, 80);
+
+    @include onTablet {
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+    }
+  }
+  &__row {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 54px;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      row-gap: 0px;
+    }
+  }
+  &__row--left {
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+  &__row--right {
+    @include onDesktop {
+      grid-column: 3 / -1;
+    }
+  }
+}
+.card {
+  padding-inline: 7px;
+  margin-inline: -7px;
+  
+  @include onTablet {
+    flex: 0 0 50%;
+  }
+  * {
+    margin-bottom: 16px;
+  }
+  &__img {
+    width: 100%;
+    aspect-ratio: 402 / 512;
+    position: relative;
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      @include ibg;
+    }
+  }
+  &__title {
+    margin-bottom: 8px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $gray-text-color;
+  }
+  &__text p:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &__link {
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $red-text-color;
+  }
+}

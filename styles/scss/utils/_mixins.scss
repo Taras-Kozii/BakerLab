@@ -8,9 +8,8 @@
     @content;
   }
 }
-
 @mixin adaptive-property($property, $mobileSize, $tableSize, $decktopSize) {
-  $maxWidth: 1260;
+  $maxWidth: 1280;
   $addSize: $decktopSize - $mobileSize;
 
   @if ($tableSize == 0) {
@@ -23,11 +22,11 @@
       #{$property}: calc(#{$mobileSize}px + #{$addSize} * ((100vw - 320px) / (#{$maxWidth} - 320)));
     }
   } @else if ($tableSize > 0) {
-    #{$property}: calc(#{$mobileSize + px} + #{$tableSize - $mobileSize} * ((100vw - 320px) / #{744 - 320}));
+    #{$property}: calc(#{$mobileSize + px} + #{$tableSize - $mobileSize} * ((100vw - 320px) / #{768 - 320}));
 
     @media (min-width: 767.98px) {
       #{$property}: calc(
-        #{$tableSize + px} + #{$decktopSize - $tableSize} * ((100vw - 767.98px) / (#{$maxWidth} - 744))
+        #{$tableSize + px} + #{$decktopSize - $tableSize} * ((100vw - 767.98px) / (#{$maxWidth} - 768))
       );
     }
 
@@ -35,20 +34,6 @@
     @media (min-width: #{$maxWidth + px}) {
       #{$property}: $decktopSize + px;
     }
-  }
-}
-@mixin grid-tablet {
-  @media (min-width: $tablet-min-width) {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    column-gap: 24px;
-  }
-}
-@mixin grid-desktop {
-  @media (min-width: $desktop-min-width) {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    column-gap: 24px;
   }
 }
 @mixin ibg {

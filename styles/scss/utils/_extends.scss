@@ -1,0 +1,8 @@
+%section-title {
+  font-weight: 400;
+  line-height: 85%;
+  letter-spacing: -5%;
+  text-transform: uppercase;
+  color: $red-text-color;
+  @include adaptive-property(font-size, 48, 56, 72);
+  }

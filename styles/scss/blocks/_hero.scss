@@ -1,0 +1,70 @@
+.hero {
+  height: 100vh;
+
+  &__content {
+    position: relative;
+    @include adaptive-property(margin-bottom, 104, 228, 218);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+  &__text {
+    @include adaptive-property(margin-bottom, 32, 146, 8);
+    text-align: center;
+    @include onTablet {
+      grid-column: 1 / 5;
+      text-align-last: left;
+    }
+  }
+  &__title {
+    line-height: 0.85;
+    letter-spacing: -5%;
+    text-align: center;
+    text-transform: uppercase;
+    color: $red-text-color;
+    @include adaptive-property(font-size, 64, 80, 136);
+    margin-bottom: 20px;
+    // @include adaptive-property(margin-bottom, 20, 210, 64);
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+  }
+  &__img {
+    position: relative;
+    @include adaptive-property(width, 288, 326, 544);
+    @include adaptive-property(height, 290, 328, 546);
+
+    @include onTablet {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
+    img {
+      @include ibg;
+    }
+  }
+  &__button {
+    width: max(100%, 380px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    border-radius: 32px;
+    color: $red-text-color;
+    border: 2px solid $red-text-color;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.footer {
+  background-color: $text-color;
+  &__content {
+    color: #fff;
+    @include adaptive-property(padding-block, 60, 88, 88);
+  }
+  &__text {
+    @include adaptive-property(margin-bottom, 40, 40, 40);
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__title {
+    margin-bottom: 40px;
+    line-height: 0.85;
+    letter-spacing: -5%;
+    text-transform: uppercase;
+    @include adaptive-property(font-size, 48, 56, 72);
+  }
+  &__menu {
+    @include adaptive-property(margin-bottom, 60, 0, 0);
+  }
+  &__subtitle {
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $gray-text-color;
+  }
+  a {
+    color: #fff;
+  }
+}
+
+.menu-footer {
+  &__logo {
+    display: block;
+    position: relative;
+    width: 168px;
+    height: 40px;
+    @include adaptive-property(margin-bottom, 40, 60, 60);
+
+    img {
+      @include ibg;
+      object-fit: contain;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+}
+.contact-us {
+  @include onTablet {
+    flex: 0 0 50%;
+  }
+  &__contacts {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__calls {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  &__email {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    @include onDesktop {
+      flex: 0 0 50%;
+    }
+  }
+}
+.socials {
+  @include onTablet {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__icons {
+    display: flex;
+    column-gap: 32px;
+  }
+  &__copyright {
+    color: $gray-text-color;
+    @include onTablet {
+      flex: 0 0 50%;
+    }
+  }
+  &__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    @include adaptive-property(margin-bottom, 40, 0, 0);
+    position: relative;
+
+    img {
+      @include ibg;
+    }
+  }
+}

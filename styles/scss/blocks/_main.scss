@@ -2,4 +2,8 @@
   &__products {
     @include adaptive-property(margin-bottom, 72, 152, 178);
   }
+  &__about {
+    position: relative;
+    @include adaptive-property(margin-bottom, 72, 152, 350);
+  }
 }

@@ -1,4 +1,22 @@
 .about {
+  &__img {
+    position: absolute;
+    left: 50%;
+    bottom: 246px;
+    @include adaptive-property(width, 320, 526, 718);
+    @include adaptive-property(height, 300, 493, 673);
+    transform: translateX(-50%);
+    z-index: -1;
+
+    @include onTablet {
+      top: 0;
+      bottom: 0;
+    }
+
+    img {
+      @include ibg;
+    }
+  }
   &__content {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,136 @@
+.header {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include adaptive-property(height, 64, 88, 88);
+  }
+  &__logo {
+    position: relative;
+    display: block;
+    width: 136px;
+    height: 32px;
+    z-index: 3;
+
+    img {
+      @include ibg;
+    }
+  }
+  &__menu-content {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  &__menu {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: $bg-color;
+  }
+}
+.burger {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 10px;
+  cursor: pointer;
+  z-index: 3;
+  @include onDesktop {
+    display: none;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: $text-color;
+    transition: $transition-duraction ease-in;
+  }
+  &:before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+}
+.burger.active {
+  &:before {
+    top: 50%;
+    transform: rotate(-45deg) translateY(-50%);
+  }
+  &::after {
+    bottom: 50%;
+    transform: rotate(45deg) translateY(50%);
+  }
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: $transition-duraction ease-in;
+
+  @include onDesktop {
+    position: relative;
+    opacity: 1;
+    right: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 24px;
+
+    @include onDesktop {
+      flex-direction: row;
+      column-gap: 64px;
+      flex-wrap: wrap;
+    }
+  }
+  &__link {
+    @include adaptive-property(font-size, 20, 22, 16);
+    font-weight: 400;
+    letter-spacing: -1%;
+    color: $text-color;
+    text-align: center;
+  }
+  &__link-contacts {
+    display: block;
+    position: relative;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 2%;
+    text-transform: uppercase;
+    color: $red-text-color;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: -8px;
+      width: 24px;
+      height: 24px;
+      background-image: url('../../images/icons/call.svg');
+      background-position: center;
+      background-size: cover;
+      transform: translate(-100%, -50%);
+    }
+  }
+}
+.menu.active {
+  right: 0%;
+  opacity: 1;
+  transition: $transition-duraction ease-in-out;
+}

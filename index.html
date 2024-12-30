@@ -15,27 +15,52 @@
   </head>
   <body class="page">
     <div class="wrapper">
-      <header class="header">
+      <header class="header page__header">
         <div class="header__container">
-          <div class="header__content"></div>
+          <div class="header__content">
+            <a href="#" class="header__logo">
+              <img src="./images/icons/logo-black.svg" alt="BakeryLab-logo">           
+            </a>
+            <div class="header__menu-content">
+              <nav class="header__menu menu">
+                <ul class="menu__list">
+                  <li class="li menu__item">
+                    <a href="" class="menu__link" data-goto=".products">Products</a>
+                  </li>
+                  <li class="li menu__item">
+                    <a href="" class="menu__link" data-goto=".about">About Us</a>
+                  </li>
+                  <li class="li menu__item">
+                    <a href="" class="menu__link" data-goto=".hero">Blog</a>
+                  </li>
+                  <li class="li menu__item">
+                    <a href="" class="menu__link menu__link-contacts" data-goto=".contact-us">Contact us</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="burger"></div>
+            </div>
+          </div>
         </div>
       </header>
       <main class="main">
         <section class="main__hero hero">
           <div class="hero__container">
+            <div class="hero__img">
+              <img src="./images/Cookie.webp" alt="cookie">
+            </div>
             <div class="hero__content">
               <div class="hero__text">
                 <p>
-                  Webake your fantasies — croissants, cakes, cookies, and cupcakes.
+                  We bake your fantasies — croissants, cakes, cookies, and cupcakes.
                 </p>
               </div>
               <h1 class="hero__title">
                 Creative bakery
               </h1>
-              <div class="hero__img">
-                <img src="./images/Cookie.webp" alt="cookie-photo">
-              </div>
-              <a href="#" class="hero__button button">Learn more</a>
+              <a href="#" class="hero__button">
+                Learn more
+              </a>
             </div>
           </div>
         </section>
@@ -258,5 +283,6 @@
         </div>
       </footer>
     </div>
+    <script src="./scripts/main.js"></script>
   </body>
 </html>

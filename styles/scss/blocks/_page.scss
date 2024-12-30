@@ -5,9 +5,28 @@
   line-height: 1.5;
   letter-spacing: -1%;
   background-color: $bg-color;
+
+  &__header {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    @include adaptive-property(margin-bottom, 32, 80, 135);
+  }
+  &__menu {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
 }
 .page.lock {
   overflow: clip;
+}
+.page.lock .page__header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
 }
 .wrapper {
   min-height: 100%;

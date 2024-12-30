@@ -45,3 +45,11 @@
   object-fit: cover;
   object-position: center;
 }
+
+@mixin hover-item {
+  transform: $transition-duraction ease-in;
+
+  &:hover {
+    @content;
+  }
+}

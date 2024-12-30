@@ -2,56 +2,52 @@
   height: 100vh;
 
   &__content {
-    position: relative;
-    @include adaptive-property(margin-bottom, 104, 228, 218);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    justify-content: center;
     align-items: center;
-
+    @include adaptive-property(margin-bottom, 104, 228, 313);
     @include onTablet {
       display: grid;
       grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px
     }
+
   }
   &__text {
     @include adaptive-property(margin-bottom, 32, 146, 8);
-    text-align: center;
     @include onTablet {
       grid-column: 1 / 5;
-      text-align-last: left;
     }
   }
   &__title {
+    width: 100%;
     line-height: 0.85;
     letter-spacing: -5%;
     text-align: center;
     text-transform: uppercase;
     color: $red-text-color;
     @include adaptive-property(font-size, 64, 80, 136);
-    margin-bottom: 20px;
-    // @include adaptive-property(margin-bottom, 20, 210, 64);
+    @include adaptive-property(margin-bottom, 290, 210, 64);
     @include onTablet {
       grid-column: 1 / -1;
+      white-space: nowrap;
     }
   }
   &__img {
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     @include adaptive-property(width, 288, 326, 544);
     @include adaptive-property(height, 290, 328, 546);
-
-    @include onTablet {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: -1;
-    }
+    @include adaptive-property(top, 220, 144, 10);
+    z-index: -1;
 
     img {
       @include ibg;
     }
   }
   &__button {
-    width: max(100%, 380px);
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

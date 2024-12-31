@@ -51,6 +51,13 @@
     flex-direction: column;
     row-gap: 16px;
   }
+  &__link {
+    display: inline-block;
+    @extend %hover-link;
+    &:before {
+      background-color: #fff;
+    }
+  }
 }
 .contact-us {
   @include onTablet {
@@ -74,6 +81,15 @@
     row-gap: 16px;
     @include onDesktop {
       flex: 0 0 50%;
+    }
+  }
+  &__link,
+  &__email-link {
+    display: inline-block;
+    width: max-content;
+    @extend %hover-link;
+    &:before {
+      background-color: #fff;
     }
   }
 }

@@ -2,6 +2,9 @@
   height: 100vh;
 
   &__content {
+    position: relative;
+    left: 0;
+    top: 0;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -11,12 +14,17 @@
       grid-template-columns: repeat(8, 1fr);
       column-gap: 24px
     }
-
   }
   &__text {
+    text-align: center;
     @include adaptive-property(margin-bottom, 32, 146, 8);
+    @include adaptive-property(margin-top, 96, 144, 223);
     @include onTablet {
+      text-align: left;
       grid-column: 1 / 5;
+    }
+    @include onDesktop {
+      grid-column: 1 / 3;
     }
   }
   &__title {
@@ -32,6 +40,9 @@
       grid-column: 1 / -1;
       white-space: nowrap;
     }
+    @include onDesktop {
+      grid-column: 1 / -1;
+    }
   }
   &__img {
     position: absolute;
@@ -39,7 +50,7 @@
     transform: translateX(-50%);
     @include adaptive-property(width, 288, 326, 544);
     @include adaptive-property(height, 290, 328, 546);
-    @include adaptive-property(top, 220, 144, 10);
+    @include adaptive-property(top, 280, 204, 120);
     z-index: -1;
 
     img {
@@ -61,6 +72,9 @@
     text-transform: uppercase;
     @include onTablet {
       grid-column: 3 / 7;
+    }
+    @include onDesktop {
+      grid-column: 1 / 3;
     }
   }
 }

@@ -17,6 +17,29 @@
   }
 }
 
+.contact-us__link, .contact-us__email-link, .menu-footer__link {
+  position: relative;
+}
+.contact-us__link:before, .contact-us__email-link:before, .menu-footer__link:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  height: 2px;
+  width: 0%;
+  border-radius: 5px;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.contact-us__link:hover:before, .contact-us__email-link:hover:before, .menu-footer__link:hover:before {
+  left: 0;
+  right: 0;
+  width: 100%;
+  -webkit-transition: 0.4s ease-in;
+  transition: 0.4s ease-in;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -89,11 +112,12 @@ h6 {
   background-color: #ffeefc;
 }
 .page__header {
-  position: relative;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   margin-bottom: calc(32px + 48 * (100vw - 320px) / 448);
+  z-index: 10;
 }
 @media (min-width: 767.98px) {
   .page__header {
@@ -105,21 +129,9 @@ h6 {
     margin-bottom: 135px;
   }
 }
-.page__menu {
-  position: relative;
-  left: 0;
-  top: 0;
-}
 
 .page.lock {
   overflow: clip;
-}
-
-.page.lock .page__header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 2;
 }
 
 .wrapper {
@@ -154,11 +166,11 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: calc(64px + 24 * (100vw - 320px) / 448);
+  height: calc(64px + 0 * (100vw - 320px) / 448);
 }
 @media (min-width: 767.98px) {
   .header__content {
-    height: calc(88px + 0 * (100vw - 767.98px) / (1280 - 768));
+    height: calc(64px + 24 * (100vw - 767.98px) / (1280 - 768));
   }
 }
 @media (min-width: 1280px) {
@@ -171,7 +183,7 @@ h6 {
   display: block;
   width: 136px;
   height: 32px;
-  z-index: 3;
+  z-index: 10;
 }
 .header__logo img {
   position: absolute;
@@ -195,7 +207,7 @@ h6 {
   top: 0;
   height: 100%;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   background-color: #ffeefc;
 }
 
@@ -207,7 +219,7 @@ h6 {
   width: 24px;
   height: 10px;
   cursor: pointer;
-  z-index: 3;
+  z-index: 10;
 }
 @media (min-width: 1024px) {
   .burger {
@@ -376,6 +388,9 @@ h6 {
   height: 100vh;
 }
 .hero__content {
+  position: relative;
+  left: 0;
+  top: 0;
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -405,7 +420,9 @@ h6 {
   }
 }
 .hero__text {
+  text-align: center;
   margin-bottom: calc(32px + 114 * (100vw - 320px) / 448);
+  margin-top: calc(96px + 48 * (100vw - 320px) / 448);
 }
 @media (min-width: 767.98px) {
   .hero__text {
@@ -417,9 +434,25 @@ h6 {
     margin-bottom: 8px;
   }
 }
+@media (min-width: 767.98px) {
+  .hero__text {
+    margin-top: calc(144px + 79 * (100vw - 767.98px) / (1280 - 768));
+  }
+}
+@media (min-width: 1280px) {
+  .hero__text {
+    margin-top: 223px;
+  }
+}
 @media (min-width: 576px) {
   .hero__text {
+    text-align: left;
     grid-column: 1/5;
+  }
+}
+@media (min-width: 1024px) {
+  .hero__text {
+    grid-column: 1/3;
   }
 }
 .hero__title {
@@ -458,6 +491,11 @@ h6 {
     white-space: nowrap;
   }
 }
+@media (min-width: 1024px) {
+  .hero__title {
+    grid-column: 1/-1;
+  }
+}
 .hero__img {
   position: absolute;
   left: 50%;
@@ -466,7 +504,7 @@ h6 {
           transform: translateX(-50%);
   width: calc(288px + 38 * (100vw - 320px) / 448);
   height: calc(290px + 38 * (100vw - 320px) / 448);
-  top: calc(220px + -76 * (100vw - 320px) / 448);
+  top: calc(280px + -76 * (100vw - 320px) / 448);
   z-index: -1;
 }
 @media (min-width: 767.98px) {
@@ -491,12 +529,12 @@ h6 {
 }
 @media (min-width: 767.98px) {
   .hero__img {
-    top: calc(144px + -134 * (100vw - 767.98px) / (1280 - 768));
+    top: calc(204px + -84 * (100vw - 767.98px) / (1280 - 768));
   }
 }
 @media (min-width: 1280px) {
   .hero__img {
-    top: 10px;
+    top: 120px;
   }
 }
 .hero__img img {
@@ -533,6 +571,11 @@ h6 {
 @media (min-width: 576px) {
   .hero__button {
     grid-column: 3/7;
+  }
+}
+@media (min-width: 1024px) {
+  .hero__button {
+    grid-column: 1/3;
   }
 }
 
@@ -657,13 +700,58 @@ h6 {
   margin-bottom: 10px;
 }
 .card__link {
+  position: relative;
+  margin-left: 24px;
   font-weight: 500;
   line-height: 100%;
   letter-spacing: 2%;
   text-transform: uppercase;
   color: #f9512e;
 }
+.card__link:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../../images/icons/arrow.svg");
+  background-size: contain;
+  background-position: center;
+  -webkit-transform: translateY(-50%) translateX(-100%);
+      -ms-transform: translateY(-50%) translateX(-100%);
+          transform: translateY(-50%) translateX(-100%);
+  animation: arrow 0.5s linear alternate-reverse infinite both;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.card__link:hover::before {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
 
+@-webkit-keyframes arrow {
+  0% {
+    -webkit-transform: translateY(-50%) translateX(-110%);
+            transform: translateY(-50%) translateX(-110%);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    -webkit-transform: translateY(-50%) translateX(-110%);
+            transform: translateY(-50%) translateX(-110%);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%);
+  }
+}
 .about__img {
   position: absolute;
   left: 50%;
@@ -930,6 +1018,12 @@ h6 {
           flex-direction: column;
   row-gap: 16px;
 }
+.menu-footer__link {
+  display: inline-block;
+}
+.menu-footer__link:before {
+  background-color: #fff;
+}
 
 @media (min-width: 576px) {
   .contact-us {
@@ -975,6 +1069,15 @@ h6 {
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
   }
+}
+.contact-us__link, .contact-us__email-link {
+  display: inline-block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.contact-us__link:before, .contact-us__email-link:before {
+  background-color: #fff;
 }
 
 @media (min-width: 576px) {

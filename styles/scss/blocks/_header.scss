@@ -3,14 +3,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include adaptive-property(height, 64, 88, 88);
+    @include adaptive-property(height, 64, 64, 88);
   }
   &__logo {
     position: relative;
     display: block;
     width: 136px;
     height: 32px;
-    z-index: 3;
+    z-index: 10;
 
     img {
       @include ibg;
@@ -27,7 +27,7 @@
     top: 0;
     height: 100%;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     background-color: $bg-color;
   }
 }
@@ -39,7 +39,7 @@
   width: 24px;
   height: 10px;
   cursor: pointer;
-  z-index: 3;
+  z-index: 10;
   @include onDesktop {
     display: none;
   }

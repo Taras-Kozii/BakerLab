@@ -77,10 +77,39 @@
     margin-bottom: 10px;
   }
   &__link {
+    position: relative;
+    margin-left: 24px;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: 2%;
     text-transform: uppercase;
     color: $red-text-color;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: -8px;
+      width: 16px;
+      height: 16px;
+      background-image: url('../../images/icons/arrow.svg');
+      background-size: contain;
+      background-position: center;
+      transform: translateY(-50%) translateX(-100%);
+      animation: arrow 0.5s linear alternate-reverse infinite both;
+      animation-play-state: paused;
+    }
+    &:hover::before {
+      animation-play-state: running;
+    }
+  }
+}
+@keyframes arrow {
+  0% {
+    transform: translateY(-50%) translateX(-110%);
+  }
+  100% {
+    transform: translateY(-50%) translateX(-50%);
   }
 }

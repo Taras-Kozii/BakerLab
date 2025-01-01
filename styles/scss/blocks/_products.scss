@@ -97,7 +97,7 @@
       background-size: contain;
       background-position: center;
       transform: translateY(-50%) translateX(-100%);
-      animation: arrow 0.5s linear alternate-reverse infinite both;
+      animation: arrow 0.5s linear  0.1s alternate infinite forwards;
       animation-play-state: paused;
     }
     &:hover::before {
@@ -107,7 +107,7 @@
 }
 @keyframes arrow {
   0% {
-    transform: translateY(-50%) translateX(-110%);
+    transform: translateY(-50%) translateX(-100%);
   }
   100% {
     transform: translateY(-50%) translateX(-50%);

@@ -12,8 +12,21 @@
     height: 32px;
     z-index: 10;
 
-    img {
+    svg {
       @include ibg;
+      object-fit: contain;
+
+      path {
+        fill: $text-color;
+        stroke-width: 1;
+        stroke: $text-color;
+        stroke-dashoffset: 0;
+        transition: fill $transition-duraction ease, stroke $transition-duraction ease-in-out 0.2s; 
+      }
+      &:hover path {
+        fill: $red-text-color;
+        stroke: $red-text-color;
+      }
     }
   }
   &__menu-content {
@@ -104,6 +117,11 @@
     letter-spacing: -1%;
     color: $text-color;
     text-align: center;
+    @extend %hover-link;
+
+    &:before {
+      background-color: $text-color;
+    }
   }
   &__link-contacts {
     display: block;

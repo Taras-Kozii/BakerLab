@@ -41,9 +41,21 @@
     height: 40px;
     @include adaptive-property(margin-bottom, 40, 60, 60);
 
-    img {
+    svg {
       @include ibg;
       object-fit: contain;
+
+      path {
+        fill: #fff;
+        stroke-width: 1;
+        stroke: #fff;
+        stroke-dashoffset: 0;
+        transition: fill $transition-duraction ease, stroke $transition-duraction ease-in-out 0.2s; 
+      }
+      &:hover path {
+        fill: $red-text-color;
+        stroke: $red-text-color;
+      }
     }
   }
   &__list {
@@ -118,29 +130,17 @@
     svg {
       width: 100%;
       height: 100%;
-      transition: $transition-duraction;
 
       path {
         stroke-width: 1;
         stroke-dashoffset: 0;
-        stroke: $red-text-color; 
-        
+        stroke: $red-text-color;
+        transition: fill $transition-duraction ease-in, stroke $transition-duraction ease 0.2s; 
       }
       &:hover path {
-        animation: svg-anim $transition-duraction ease-in-out both;
+        fill: #fff;
+        stroke: #fff;
       }
     }
-  }
-}
-@keyframes svg-anim {
-  0% {
-    fill: $red-text-color;
-  }
-  50% {
-    fill: transparent;
-  }
-  100% {
-    fill: #fff;
-    stroke: #fff;
   }
 }

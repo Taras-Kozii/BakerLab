@@ -49,11 +49,9 @@
   @include onTablet {
     flex: 0 0 50%;
   }
-  * {
-    margin-bottom: 16px;
-  }
   &__img {
     width: 100%;
+    margin-bottom: 16px;
     aspect-ratio: 402 / 512;
     position: relative;
     left: 0;
@@ -72,44 +70,56 @@
     letter-spacing: 2%;
     text-transform: uppercase;
     color: $gray-text-color;
+
+    a {
+      display: inline-block;
+      color: inherit;
+      @extend %hover-link;
+
+      &:before {
+        background-color: $gray-text-color;
+      }
+      
+    }
+  }
+  &__text {
+    margin-bottom: 16px;
   }
   &__text p:not(:last-child) {
     margin-bottom: 10px;
   }
   &__link {
-    position: relative;
-    margin-left: 24px;
+    width: max-content;
+    margin-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: 2%;
     text-transform: uppercase;
     color: $red-text-color;
 
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: -8px;
+    img {
       width: 16px;
       height: 16px;
-      background-image: url('../../images/icons/arrow.svg');
-      background-size: contain;
-      background-position: center;
-      transform: translateY(-50%) translateX(-100%);
-      animation: arrow 0.5s linear  0.1s alternate infinite forwards;
+      transform: translateX(-8px);
+      object-fit: cover;
+      object-position: center;
+      animation: arrow $transition-duraction linear  0.1s alternate infinite forwards;
       animation-play-state: paused;
     }
-    &:hover::before {
+    &:hover img {
       animation-play-state: running;
     }
   }
 }
+
 @keyframes arrow {
   0% {
-    transform: translateY(-50%) translateX(-100%);
+    transform: translateX(-8px);
   }
   100% {
-    transform: translateY(-50%) translateX(-50%);
+    transform: translateX(0px);
   }
 }

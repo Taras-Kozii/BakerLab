@@ -50,11 +50,19 @@
         stroke-width: 1;
         stroke: #fff;
         stroke-dashoffset: 0;
-        transition: fill $transition-duraction ease, stroke $transition-duraction ease-in-out 0.2s; 
+        transition:
+          fill $transition-duraction ease,
+          stroke $transition-duraction ease-in-out 0.2s;
       }
       &:hover path {
         fill: $red-text-color;
         stroke: $red-text-color;
+      }
+      @include screen-hover {
+        path {
+          fill: $red-text-color;
+          stroke: $red-text-color;
+        }
       }
     }
   }
@@ -66,6 +74,12 @@
   &__link {
     display: inline-block;
     @extend %hover-link;
+    @include screen-hover-before {
+      left: 0;
+      right: 0;
+      width: 100%;
+      transition: $transition-duraction ease-in;
+    }
     &:before {
       background-color: #fff;
     }
@@ -100,6 +114,12 @@
     display: inline-block;
     width: max-content;
     @extend %hover-link;
+    @include screen-hover-before {
+      left: 0;
+      right: 0;
+      width: 100%;
+      transition: $transition-duraction ease-in;
+    }
     &:before {
       background-color: #fff;
     }
@@ -135,11 +155,18 @@
         stroke-width: 1;
         stroke-dashoffset: 0;
         stroke: $red-text-color;
-        transition: fill $transition-duraction ease-in, stroke $transition-duraction ease 0.2s; 
+        transition:
+          fill $transition-duraction ease-in,
+          stroke $transition-duraction ease 0.2s;
       }
       &:hover path {
         fill: #fff;
         stroke: #fff;
+
+        @include screen-hover {
+          fill: #fff;
+          stroke: #fff;
+        }
       }
     }
   }

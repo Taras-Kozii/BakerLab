@@ -75,7 +75,12 @@
       display: inline-block;
       color: inherit;
       @extend %hover-link;
-
+      @include screen-hover-before {
+        left: 0;
+        right: 0;
+        width: 100%;
+        transition: $transition-duraction ease-in;
+      }
       &:before {
         background-color: $gray-text-color;
       }
@@ -111,6 +116,11 @@
     }
     &:hover img {
       animation-play-state: running;
+    }
+    @include screen-hover {
+      img {
+        animation-play-state: running;
+      }
     }
   }
 }

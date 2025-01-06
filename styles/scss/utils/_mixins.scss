@@ -53,3 +53,25 @@
     @content;
   }
 }
+
+@mixin screen-hover {
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}
+@mixin screen-hover-before {
+  @media (hover: none) {
+    &:active:before {
+      @content;
+    }
+  }
+}
+@mixin screen-hover-active {
+  @media (hover: none) {
+    &:active:active {
+      @content;
+    }
+  }
+}

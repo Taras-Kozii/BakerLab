@@ -210,6 +210,12 @@ h6 {
   fill: #f9512e;
   stroke: #f9512e;
 }
+@media (hover: none) {
+  .header__logo svg:hover path:active {
+    fill: #f9512e;
+    stroke: #f9512e;
+  }
+}
 .header__menu-content {
   position: relative;
   left: 0;
@@ -336,6 +342,15 @@ h6 {
 @media (min-width: 1280px) {
   .menu__link {
     font-size: 16px;
+  }
+}
+@media (hover: none) {
+  .menu__link:active:before {
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transition: 0.4s ease-in;
+    transition: 0.4s ease-in;
   }
 }
 .menu__link:before {
@@ -608,8 +623,8 @@ h6 {
 }
 .hero__button:focus {
   color: #fff;
-  background-color: #B3341A;
-  border-color: #B3341A;
+  background-color: #b3341a;
+  border-color: #b3341a;
 }
 .hero__button:disabled {
   opacity: 0.3;
@@ -748,6 +763,15 @@ h6 {
   display: inline-block;
   color: inherit;
 }
+@media (hover: none) {
+  .card__title a:active:before {
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transition: 0.4s ease-in;
+    transition: 0.4s ease-in;
+  }
+}
 .card__title a:before {
   background-color: #7f8096;
 }
@@ -795,6 +819,12 @@ h6 {
 .card__link:hover img {
   -webkit-animation-play-state: running;
           animation-play-state: running;
+}
+@media (hover: none) {
+  .card__link:active img {
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+  }
 }
 
 @-webkit-keyframes arrow {
@@ -1086,6 +1116,12 @@ h6 {
   fill: #f9512e;
   stroke: #f9512e;
 }
+@media (hover: none) {
+  .menu-footer__logo svg:active path {
+    fill: #f9512e;
+    stroke: #f9512e;
+  }
+}
 .menu-footer__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1098,6 +1134,15 @@ h6 {
 }
 .menu-footer__link {
   display: inline-block;
+}
+@media (hover: none) {
+  .menu-footer__link:active:before {
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transition: 0.4s ease-in;
+    transition: 0.4s ease-in;
+  }
 }
 .menu-footer__link:before {
   background-color: #fff;
@@ -1153,6 +1198,15 @@ h6 {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+@media (hover: none) {
+  .contact-us__link:active:before, .contact-us__email-link:active:before {
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transition: 0.4s ease-in;
+    transition: 0.4s ease-in;
+  }
 }
 .contact-us__link:before, .contact-us__email-link:before {
   background-color: #fff;
@@ -1212,4 +1266,10 @@ h6 {
 .socials__icon svg:hover path {
   fill: #fff;
   stroke: #fff;
+}
+@media (hover: none) {
+  .socials__icon svg:hover path:active {
+    fill: #fff;
+    stroke: #fff;
+  }
 }

@@ -21,11 +21,18 @@
         stroke-width: 1;
         stroke: $text-color;
         stroke-dashoffset: 0;
-        transition: fill $transition-duraction ease, stroke $transition-duraction ease-in-out 0.2s; 
+        transition:
+          fill $transition-duraction ease,
+          stroke $transition-duraction ease-in-out 0.2s;
       }
       &:hover path {
         fill: $red-text-color;
         stroke: $red-text-color;
+
+        @include screen-hover {
+          fill: $red-text-color;
+          stroke: $red-text-color;
+        }
       }
     }
   }
@@ -118,7 +125,12 @@
     color: $text-color;
     text-align: center;
     @extend %hover-link;
-
+    @include screen-hover-before {
+      left: 0;
+      right: 0;
+      width: 100%;
+      transition: $transition-duraction ease-in;
+    }
     &:before {
       background-color: $text-color;
     }
@@ -140,7 +152,7 @@
       left: -8px;
       width: 24px;
       height: 24px;
-      background-image: url('../../images/icons/call.svg');
+      background-image: url("../../images/icons/call.svg");
       background-position: center;
       background-size: cover;
       transform: translate(-100%, -50%);

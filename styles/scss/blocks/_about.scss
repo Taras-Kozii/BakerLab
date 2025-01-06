@@ -54,7 +54,7 @@
     flex-direction: column;
     row-gap: 8px;
 
-    @include  onTablet {
+    @include onTablet {
       flex: 0 0 50%;
       margin-bottom: 0;
     }

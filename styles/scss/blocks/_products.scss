@@ -58,9 +58,31 @@
     top: 0;
     border-radius: 8px;
     overflow: hidden;
+    &:hover {
+      box-shadow: 3px 3px 12px 9px #7f8096;
+      transition: $transition-duraction ease-in;
+    }
+    @include screen-hover {
+      box-shadow: 3px 3px 12px 9px #7f8096;
+      transition: $transition-duraction ease-in;
+    }
 
     img {
       @include ibg;
+      transform: scale(1) translateY(0);
+      transform-origin: 50% 16%;
+      transition: $transition-duraction ease-out 0.1s;
+
+    &:hover {
+      box-shadow: 0 0 19.5px 11px #7f8096;
+      transform: scale(1.05) translateY(-25px);
+      transform-origin: top;
+    }
+    @include screen-hover {
+      box-shadow: 0 0 19.5px 11px #7f8096;
+      transform: scale(1.05) translateY(-25px);
+      transform-origin: top;
+    }
     }
   }
   &__title {

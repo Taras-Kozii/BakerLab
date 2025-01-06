@@ -40,6 +40,13 @@
     width: 168px;
     height: 40px;
     @include adaptive-property(margin-bottom, 40, 60, 60);
+    transition: $transition-duraction ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+      @include screen-hover {
+        transform: scale(1.1);
+      }
 
     svg {
       @include ibg;
@@ -150,7 +157,13 @@
     svg {
       width: 100%;
       height: 100%;
-
+      transition: $transition-duraction ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+      @include screen-hover {
+        transform: scale(1.1);
+      }
       path {
         stroke-width: 1;
         stroke-dashoffset: 0;
@@ -162,8 +175,9 @@
       &:hover path {
         fill: #fff;
         stroke: #fff;
-
-        @include screen-hover {
+      }
+      @include screen-hover {
+        path {
           fill: #fff;
           stroke: #fff;
         }

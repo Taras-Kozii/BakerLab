@@ -184,6 +184,20 @@ h6 {
   width: 136px;
   height: 32px;
   z-index: 10;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.header__logo:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+@media (hover: none) {
+  .header__logo:active {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 .header__logo svg {
   position: absolute;
@@ -210,8 +224,8 @@ h6 {
   fill: #f9512e;
   stroke: #f9512e;
 }
-@media (hover: none) {
-  .header__logo svg:hover path:active {
+@media (hover: none) and (hover: none) {
+  .header__logo svg:active path:active {
     fill: #f9512e;
     stroke: #f9512e;
   }
@@ -293,6 +307,9 @@ h6 {
 }
 @media (min-width: 1024px) {
   .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: relative;
     opacity: 1;
     right: 0;
@@ -320,11 +337,12 @@ h6 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-column-gap: 64px;
        -moz-column-gap: 64px;
             column-gap: 64px;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 .menu__link {
@@ -382,6 +400,9 @@ h6 {
 }
 
 .menu.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   right: 0%;
   opacity: 1;
   -webkit-transition: 0.4s ease-in-out;
@@ -740,6 +761,20 @@ h6 {
   border-radius: 8px;
   overflow: hidden;
 }
+.card__img:hover {
+  -webkit-box-shadow: 3px 3px 12px 9px #7f8096;
+          box-shadow: 3px 3px 12px 9px #7f8096;
+  -webkit-transition: 0.4s ease-in;
+  transition: 0.4s ease-in;
+}
+@media (hover: none) {
+  .card__img:active {
+    -webkit-box-shadow: 3px 3px 12px 9px #7f8096;
+            box-shadow: 3px 3px 12px 9px #7f8096;
+    -webkit-transition: 0.4s ease-in;
+    transition: 0.4s ease-in;
+  }
+}
 .card__img img {
   position: absolute;
   left: 0;
@@ -750,6 +785,36 @@ h6 {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  -webkit-transform: scale(1) translateY(0);
+      -ms-transform: scale(1) translateY(0);
+          transform: scale(1) translateY(0);
+  -webkit-transform-origin: 50% 16%;
+      -ms-transform-origin: 50% 16%;
+          transform-origin: 50% 16%;
+  -webkit-transition: 0.4s ease-out 0.1s;
+  transition: 0.4s ease-out 0.1s;
+}
+.card__img img:hover {
+  -webkit-box-shadow: 0 0 19.5px 11px #7f8096;
+          box-shadow: 0 0 19.5px 11px #7f8096;
+  -webkit-transform: scale(1.05) translateY(-25px);
+      -ms-transform: scale(1.05) translateY(-25px);
+          transform: scale(1.05) translateY(-25px);
+  -webkit-transform-origin: top;
+      -ms-transform-origin: top;
+          transform-origin: top;
+}
+@media (hover: none) {
+  .card__img img:active {
+    -webkit-box-shadow: 0 0 19.5px 11px #7f8096;
+            box-shadow: 0 0 19.5px 11px #7f8096;
+    -webkit-transform: scale(1.05) translateY(-25px);
+        -ms-transform: scale(1.05) translateY(-25px);
+            transform: scale(1.05) translateY(-25px);
+    -webkit-transform-origin: top;
+        -ms-transform-origin: top;
+            transform-origin: top;
+  }
 }
 .card__title {
   margin-bottom: 8px;
@@ -1080,6 +1145,8 @@ h6 {
   width: 168px;
   height: 40px;
   margin-bottom: calc(40px + 20 * (100vw - 320px) / 448);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 @media (min-width: 767.98px) {
   .menu-footer__logo {
@@ -1089,6 +1156,18 @@ h6 {
 @media (min-width: 1280px) {
   .menu-footer__logo {
     margin-bottom: 60px;
+  }
+}
+.menu-footer__logo:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+@media (hover: none) {
+  .menu-footer__logo:active {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 .menu-footer__logo svg {
@@ -1255,6 +1334,20 @@ h6 {
 .socials__icon svg {
   width: 100%;
   height: 100%;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.socials__icon svg:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+@media (hover: none) {
+  .socials__icon svg:active {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 .socials__icon svg path {
   stroke-width: 1;
@@ -1268,7 +1361,7 @@ h6 {
   stroke: #fff;
 }
 @media (hover: none) {
-  .socials__icon svg:hover path:active {
+  .socials__icon svg:active path {
     fill: #fff;
     stroke: #fff;
   }

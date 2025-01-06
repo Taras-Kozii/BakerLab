@@ -11,6 +11,13 @@
     width: 136px;
     height: 32px;
     z-index: 10;
+    transition: $transition-duraction ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+      @include screen-hover {
+        transform: scale(1.1);
+      }
 
     svg {
       @include ibg;
@@ -28,10 +35,13 @@
       &:hover path {
         fill: $red-text-color;
         stroke: $red-text-color;
-
-        @include screen-hover {
-          fill: $red-text-color;
-          stroke: $red-text-color;
+      }
+      @include screen-hover {
+        path {
+          @include screen-hover {
+            fill: $red-text-color;
+            stroke: $red-text-color;
+          }
         }
       }
     }
@@ -100,6 +110,7 @@
   transition: $transition-duraction ease-in;
 
   @include onDesktop {
+    display: flex;
     position: relative;
     opacity: 1;
     right: 0;
@@ -114,6 +125,7 @@
 
     @include onDesktop {
       flex-direction: row;
+      flex-wrap: wrap;
       column-gap: 64px;
       flex-wrap: wrap;
     }
@@ -160,6 +172,7 @@
   }
 }
 .menu.active {
+  display: flex;
   right: 0%;
   opacity: 1;
   transition: $transition-duraction ease-in-out;

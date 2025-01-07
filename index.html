@@ -14,9 +14,9 @@
     />
     <link rel="stylesheet" href="./styles/css/styles.min.css" />
   </head>
-  <body class="page">
+  <body class="page right-fix-padding">
     <div class="wrapper">
-      <header class="header page__header">
+      <header class="header page__header right-fix-padding">
         <div class="header__container">
           <div class="header__content">
             <a href="#" class="header__logo">
@@ -55,21 +55,21 @@
               <nav class="header__menu menu">
                 <ul class="menu__list">
                   <li class="li menu__item">
-                    <a href="" class="menu__link" data-goto=".products"
+                    <a href="#products" class="menu__link" data-goto=".products"
                       >Products</a
                     >
                   </li>
                   <li class="li menu__item">
-                    <a href="" class="menu__link" data-goto=".about"
+                    <a href="#about" class="menu__link" data-goto=".about"
                       >About Us</a
                     >
                   </li>
                   <li class="li menu__item">
-                    <a href="" class="menu__link" data-goto=".hero">Blog</a>
+                    <a href="#hero" class="menu__link" data-goto=".hero">Blog</a>
                   </li>
                   <li class="li menu__item">
                     <a
-                      href=""
+                      href="#contact-us"
                       class="menu__link-contacts"
                       data-goto=".contact-us"
                       >Contact us</a
@@ -83,10 +83,10 @@
         </div>
       </header>
       <main class="main">
-        <section class="main__hero hero">
+        <section class="main__hero hero" id="hero">
           <div class="hero__container">
             <div class="hero__img">
-              <img src="./images/Cookie.webp" alt="cookie" />
+              <img src="./images/Cookie.webp" alt="cookie" class="right-fix-padding"/>
             </div>
             <div class="hero__content">
               <div class="hero__text">
@@ -109,7 +109,7 @@
             </div>
           </div>
         </section>
-        <section class="main__products products">
+        <section class="main__products products" id="products">
           <div class="products__container">
             <div class="products__content">
               <h2 class="products__title">What we bake</h2>
@@ -257,7 +257,7 @@
             </div>
           </div>
         </section>
-        <section class="main__about about">
+        <section class="main__about about" id="about">
           <div class="about__img">
             <img src="./images/Crumbs.webp" alt="crumbs" />
           </div>
@@ -328,20 +328,20 @@
                 <ul class="menu-footer__list">
                   <li class="menu-footer__item footer__subtitle">Menu</li>
                   <li class="menu-footer__item">
-                    <a href="#" class="menu-footer__link">Products</a>
+                    <a href="#products" class="menu-footer__link" data-goto=".products">Products</a>
                   </li>
                   <li class="menu-footer__item">
-                    <a href="#" class="menu-footer__link">About Us</a>
+                    <a href="#about" class="menu-footer__link" data-goto=".about">About Us</a>
                   </li>
                   <li class="menu-footer__item">
-                    <a href="#" class="menu-footer__link">Blog</a>
+                    <a href="#hero" class="menu-footer__link" data-goto=".hero">Blog</a>
                   </li>
                   <li class="menu-footer__item">
                     <a href="#" class="menu-footer__link">Terms & Privacy</a>
                   </li>
                 </ul>
               </nav>
-              <div class="footer__contact-us contact-us">
+              <div class="footer__contact-us contact-us" id="contact-us">
                 <h2 class="footer__title">Contact us</h2>
                 <div class="contact-us__contacts">
                   <ul class="contact-us__calls">

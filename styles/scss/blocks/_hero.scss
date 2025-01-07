@@ -1,5 +1,12 @@
 .hero {
-  height: 100vh;
+  height: minmax(100vh, 670px);
+
+  @include onTablet {
+    height: minmax(100vh, 900px);
+  }
+  @include onDesktop {
+    height: minmax(100vh, 700px);
+  }
 
   &__content {
     position: relative;

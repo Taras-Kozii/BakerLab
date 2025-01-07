@@ -75,12 +75,12 @@
 
     &:hover {
       box-shadow: 0 0 19.5px 11px #7f8096;
-      transform: scale(1.05) translateY(-25px);
+      transform: scale(1.05) translateY(-15px);
       transform-origin: top;
     }
     @include screen-hover {
       box-shadow: 0 0 19.5px 11px #7f8096;
-      transform: scale(1.05) translateY(-25px);
+      transform: scale(1.05) translateY(-15px);
       transform-origin: top;
     }
     }

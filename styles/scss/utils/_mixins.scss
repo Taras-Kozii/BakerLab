@@ -9,7 +9,7 @@
   }
 }
 @mixin adaptive-property($property, $mobileSize, $tableSize, $decktopSize) {
-  $maxWidth: 1280;
+  $maxWidth: 1200;
   $addSize: $decktopSize - $mobileSize;
 
   @if ($tableSize == 0) {
@@ -68,7 +68,7 @@
     }
   }
 }
-@mixin screen-hover-active {
+@mixin screen-hover-after {
   @media (hover: none) {
     &:active:active {
       @content;

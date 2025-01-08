@@ -58,13 +58,13 @@
     top: 0;
     border-radius: 8px;
     overflow: hidden;
+    transition: box-shadow $transition-duraction ease-in;
+
     &:hover {
-      box-shadow: 3px 3px 12px 9px #7f8096;
-      transition: $transition-duraction ease-in;
+      box-shadow: 1px 1px 10px 4px #7f8096;
     }
     @include screen-hover {
-      box-shadow: 3px 3px 12px 9px #7f8096;
-      transition: $transition-duraction ease-in;
+      box-shadow: 1px 1px 10px 4px #7f8096;
     }
 
     img {
@@ -74,13 +74,11 @@
       transition: $transition-duraction ease-out 0.1s;
 
     &:hover {
-      box-shadow: 0 0 19.5px 11px #7f8096;
-      transform: scale(1.05) translateY(-15px);
+      transform: scale(1.05) translateY(-5px);
       transform-origin: top;
     }
     @include screen-hover {
-      box-shadow: 0 0 19.5px 11px #7f8096;
-      transform: scale(1.05) translateY(-15px);
+      transform: scale(1.05) translateY(-5px);
       transform-origin: top;
     }
     }
@@ -145,6 +143,23 @@
       }
     }
   }
+}
+.scroll-anim-left {
+  transition: clip-path $transition-duraction linear;
+  clip-path: inset(0 100% 0 0);
+}
+.scroll-anim-left.active {
+  clip-path: inset(0);
+}
+.scroll-anim-right {
+  transition: clip-path $transition-duraction linear;
+  clip-path: inset(0 0 0 100%);
+}
+.anim-delay {
+  transition-delay: 0.4s;
+}
+.scroll-anim-right.active {
+  clip-path: inset(0);
 }
 
 @keyframes arrow {

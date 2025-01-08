@@ -120,6 +120,7 @@
   align-items: center;
   opacity: 0;
   transition: $transition-duraction ease-in;
+  z-index: 3;
 
   @include onDesktop {
     display: flex;

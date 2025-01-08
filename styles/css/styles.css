@@ -142,6 +142,7 @@ html {
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  overflow-x: hidden;
 }
 
 [class*=__container] {
@@ -330,6 +331,7 @@ html {
   opacity: 0;
   -webkit-transition: 0.4s ease-in;
   transition: 0.4s ease-in;
+  z-index: 3;
 }
 @media (min-width: 1024px) {
   .menu {
@@ -572,6 +574,8 @@ html {
   }
 }
 .hero__title {
+  position: relative;
+  top: 0;
   width: 100%;
   line-height: 0.85;
   letter-spacing: -5%;
@@ -665,6 +669,8 @@ html {
      object-position: center;
 }
 .hero__button {
+  position: relative;
+  left: 0;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -823,19 +829,19 @@ html {
   top: 0;
   border-radius: 8px;
   overflow: hidden;
+  -webkit-transition: -webkit-box-shadow 0.4s ease-in;
+  transition: -webkit-box-shadow 0.4s ease-in;
+  transition: box-shadow 0.4s ease-in;
+  transition: box-shadow 0.4s ease-in, -webkit-box-shadow 0.4s ease-in;
 }
 .card__img:hover {
-  -webkit-box-shadow: 3px 3px 12px 9px #7f8096;
-          box-shadow: 3px 3px 12px 9px #7f8096;
-  -webkit-transition: 0.4s ease-in;
-  transition: 0.4s ease-in;
+  -webkit-box-shadow: 1px 1px 10px 4px #7f8096;
+          box-shadow: 1px 1px 10px 4px #7f8096;
 }
 @media (hover: none) {
   .card__img:active {
-    -webkit-box-shadow: 3px 3px 12px 9px #7f8096;
-            box-shadow: 3px 3px 12px 9px #7f8096;
-    -webkit-transition: 0.4s ease-in;
-    transition: 0.4s ease-in;
+    -webkit-box-shadow: 1px 1px 10px 4px #7f8096;
+            box-shadow: 1px 1px 10px 4px #7f8096;
   }
 }
 .card__img img {
@@ -858,22 +864,18 @@ html {
   transition: 0.4s ease-out 0.1s;
 }
 .card__img img:hover {
-  -webkit-box-shadow: 0 0 19.5px 11px #7f8096;
-          box-shadow: 0 0 19.5px 11px #7f8096;
-  -webkit-transform: scale(1.05) translateY(-15px);
-      -ms-transform: scale(1.05) translateY(-15px);
-          transform: scale(1.05) translateY(-15px);
+  -webkit-transform: scale(1.05) translateY(-5px);
+      -ms-transform: scale(1.05) translateY(-5px);
+          transform: scale(1.05) translateY(-5px);
   -webkit-transform-origin: top;
       -ms-transform-origin: top;
           transform-origin: top;
 }
 @media (hover: none) {
   .card__img img:active {
-    -webkit-box-shadow: 0 0 19.5px 11px #7f8096;
-            box-shadow: 0 0 19.5px 11px #7f8096;
-    -webkit-transform: scale(1.05) translateY(-15px);
-        -ms-transform: scale(1.05) translateY(-15px);
-            transform: scale(1.05) translateY(-15px);
+    -webkit-transform: scale(1.05) translateY(-5px);
+        -ms-transform: scale(1.05) translateY(-5px);
+            transform: scale(1.05) translateY(-5px);
     -webkit-transform-origin: top;
         -ms-transform-origin: top;
             transform-origin: top;
@@ -955,6 +957,39 @@ html {
   }
 }
 
+.scroll-anim-left {
+  -webkit-transition: -webkit-clip-path 0.4s linear;
+  transition: -webkit-clip-path 0.4s linear;
+  transition: clip-path 0.4s linear;
+  transition: clip-path 0.4s linear, -webkit-clip-path 0.4s linear;
+  -webkit-clip-path: inset(0 100% 0 0);
+          clip-path: inset(0 100% 0 0);
+}
+
+.scroll-anim-left.active {
+  -webkit-clip-path: inset(0);
+          clip-path: inset(0);
+}
+
+.scroll-anim-right {
+  -webkit-transition: -webkit-clip-path 0.4s linear;
+  transition: -webkit-clip-path 0.4s linear;
+  transition: clip-path 0.4s linear;
+  transition: clip-path 0.4s linear, -webkit-clip-path 0.4s linear;
+  -webkit-clip-path: inset(0 0 0 100%);
+          clip-path: inset(0 0 0 100%);
+}
+
+.anim-delay {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.scroll-anim-right.active {
+  -webkit-clip-path: inset(0);
+          clip-path: inset(0);
+}
+
 @-webkit-keyframes arrow {
   0% {
     -webkit-transform: translateX(-8px);
@@ -982,9 +1017,6 @@ html {
   bottom: 246px;
   width: calc(320px + 206 * (100vw - 320px) / 448);
   height: calc(300px + 193 * (100vw - 320px) / 448);
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
   z-index: -1;
 }
 @media (min-width: 767.98px) {

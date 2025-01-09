@@ -45,7 +45,7 @@
 .card {
   padding-inline: 7px;
   margin-inline: -7px;
-  
+
   @include onTablet {
     flex: 0 0 50%;
   }
@@ -73,14 +73,14 @@
       transform-origin: 50% 16%;
       transition: $transition-duraction ease-out 0.1s;
 
-    &:hover {
-      transform: scale(1.05) translateY(-5px);
-      transform-origin: top;
-    }
-    @include screen-hover {
-      transform: scale(1.05) translateY(-5px);
-      transform-origin: top;
-    }
+      &:hover {
+        transform: scale(1.05) translateY(-5px);
+        transform-origin: top;
+      }
+      @include screen-hover {
+        transform: scale(1.05) translateY(-5px);
+        transform-origin: top;
+      }
     }
   }
   &__title {
@@ -104,7 +104,6 @@
       &:before {
         background-color: $gray-text-color;
       }
-      
     }
   }
   &__text {
@@ -131,7 +130,7 @@
       transform: translateX(-8px);
       object-fit: cover;
       object-position: center;
-      animation: arrow $transition-duraction linear  0.1s alternate infinite forwards;
+      animation: arrow $transition-duraction linear 0.1s alternate infinite forwards;
       animation-play-state: paused;
     }
     &:hover img {

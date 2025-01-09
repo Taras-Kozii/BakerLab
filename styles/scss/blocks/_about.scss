@@ -1,19 +1,21 @@
 .about {
   &__img {
     position: absolute;
-    left: 50%;
     bottom: 246px;
     @include adaptive-property(width, 320, 526, 718);
     @include adaptive-property(height, 300, 493, 673);
     z-index: -1;
+    overflow-x: hidden;
 
     @include onTablet {
       top: 0;
-      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     img {
       @include ibg;
+      overflow-x: clip;
     }
   }
   &__content {

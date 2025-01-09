@@ -82,6 +82,14 @@
   height: 10px;
   cursor: pointer;
   z-index: 10;
+  transition: $transition-duraction ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+  @include screen-hover {
+    transform: scale(1.2);
+  }
   @include onDesktop {
     display: none;
   }

@@ -6,15 +6,15 @@ const burger = document.querySelector('.burger');
 const navLinks = document.querySelectorAll('[data-goto]');
 const header = document.querySelector('.header');
 const heroImg = document.querySelector('.hero__img');
-const button = document.querySelector('.hero__button');
+const title = document.querySelector('.hero__title');
 
 window.addEventListener('load', showCountsAnim);
 
 window.addEventListener('scroll', () => {
   const pageScrollValue = window.scrollY;
-  scrollAnimProperty(heroImg, 0.1, 'transform', `translateX(-50%) scale(${1 + pageScrollValue / 1100})`);
+  scrollAnimProperty(heroImg, 0.1, 'transform', `translateX(-50%) scale(${1 + pageScrollValue / 2100})`);
+  scrollAnimProperty(title, 0.1, 'transform', `scale(${1 - pageScrollValue / 2100})`);
   scrollAnim();
-
 });
 
 function scrollAnimProperty(item, percent, property, scrollValue) {

@@ -41,12 +41,12 @@
     height: 40px;
     @include adaptive-property(margin-bottom, 40, 60, 60);
     transition: $transition-duraction ease-in-out;
-      &:hover {
-        transform: scale(1.1);
-      }
-      @include screen-hover {
-        transform: scale(1.1);
-      }
+    &:hover {
+      transform: scale(1.1);
+    }
+    @include screen-hover {
+      transform: scale(1.1);
+    }
 
     svg {
       @include ibg;

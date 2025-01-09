@@ -8,6 +8,7 @@ html {
   line-height: 1.5;
   letter-spacing: -1%;
   background-color: $bg-color;
+  overflow-x: clip;
 
   &__header {
     position: fixed;
@@ -25,7 +26,6 @@ html {
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  overflow-x: hidden;
 }
 [class*="__container"] {
   max-width: 1200px;
